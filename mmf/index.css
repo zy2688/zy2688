@@ -222,6 +222,7 @@ img#logo {
     font-size: 20px;
     line-height: 36px;
     margin: 0 2px;
+    cursor: pointer;
 }
 
 .music_list_title.pops {
@@ -258,6 +259,10 @@ img#logo {
     width: auto;
     margin: 0 2px;
     padding: 5px;
+}
+
+.music_box_list{
+    display: none;
 }
 
 .music_box.pops {
