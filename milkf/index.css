@@ -233,6 +233,11 @@ img#logo {
     cursor: pointer;
 }
 
+.music_list_title.osusume {
+    background-color: #bbad63;
+    color: #fff;
+}
+
 .music_list_title.pops {
     background-color: #ff8605;
     color: #fff;
@@ -319,6 +324,11 @@ img#logo {
 
 .music_box_list {
     display: none;
+}
+
+.music_box.osusume {
+    border: 2px solid #bbad63;
+    border-top: 0;
 }
 
 .music_box.pops {
