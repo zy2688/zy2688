@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta charset='UTF-8'>
 <title>TableExport</title>
 <script src="https://cdn.bootcss.com/jquery/1.4.3/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/blob-polyfill/3.0.20180112/Blob.js"></script>
@@ -12,46 +13,46 @@
 
 <table style="text-align: center; border: black solid 2px;" id="tabledata">
 <tr>
-<th>±êÌâ1</th>
-<th>±êÌâ2</th>
-<th>±êÌâ3</th>
-<th>±êÌâ4</th>
-<th>±êÌâ5</th>
+<th>æ ‡é¢˜1</th>
+<th>æ ‡é¢˜2</th>
+<th>æ ‡é¢˜3</th>
+<th>æ ‡é¢˜4</th>
+<th>æ ‡é¢˜5</th>
 </tr>
 <tr>
-<td colspan='5'>ºÏ²¢ĞĞ</td>
+<td colspan='5'>åˆå¹¶è¡Œ</td>
 </tr>
 <tr>
-<td>Êı¾İ1</td>
-<td>Êı¾İ2</td>
-<td>Êı¾İ3</td>
-<td>Êı¾İ4</td>
-<td>Êı¾İ5</td>
+<td>æ•°æ®1</td>
+<td>æ•°æ®2</td>
+<td>æ•°æ®3</td>
+<td>æ•°æ®4</td>
+<td>æ•°æ®5</td>
 </tr>
 <tr>
-<td rowspan='2'>ºÏ²¢ÁĞ</td>
+<td rowspan='2'>åˆå¹¶åˆ—</td>
 <td>20</td>
 <td>30</td>
 <td>40.4</td>
 <td>50.0</td>
 </tr>
 <tr>
-<td>Êı¾İ2</td>
-<td>Êı¾İ3</td>
-<td>Êı¾İ4</td>
-<td>Êı¾İ5</td>
+<td>æ•°æ®2</td>
+<td>æ•°æ®3</td>
+<td>æ•°æ®4</td>
+<td>æ•°æ®5</td>
 </tr>
 </table>
-<button id="exportBtn">µ¼³öXLSX</button>
+<button id="exportBtn">å¯¼å‡ºXLSX</button>
 <script type="text/javascript">
 $("#exportBtn").click(function(){
 var tb = $("#tabledata").tableExport({
     exportButtons:false,
     formats: ["xlsx"],
-    filename: "µ¼³öµÄÊı¾İ",
+    filename: "å¯¼å‡ºçš„æ•°æ®",
     bootstrap: false,
     trimWhitespace: true,
-    sheetname: "µ¼³öÊı¾İ"
+    sheetname: "å¯¼å‡ºæ•°æ®"
     });
 var tdata = tb.getExportData()['tabledata']["xlsx"];
 
