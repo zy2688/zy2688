@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>TableExport</title>
+<script src="https://cdn.bootcss.com/jquery/1.4.3/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/blob-polyfill/3.0.20180112/Blob.js"></script>
+<script src="https://cdn.bootcss.com/xlsx/0.14.1/xlsx.core.min.js"></script>
+<script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.js"></script>
+<script src="https://cdn.bootcss.com/TableExport/5.2.0/js/tableexport.js"></script>
+<link href="https://cdn.bootcss.com/TableExport/5.2.0/css/tableexport.css" rel="stylesheet">
+</head>
+<body>
+
+<table style="text-align: center; border: black solid 2px;" id="tabledata">
+<tr>
+<th>标题1</th>
+<th>标题2</th>
+<th>标题3</th>
+<th>标题4</th>
+<th>标题5</th>
+</tr>
+<tr>
+<td colspan='5'>合并行</td>
+</tr>
+<tr>
+<td>数据1</td>
+<td>数据2</td>
+<td>数据3</td>
+<td>数据4</td>
+<td>数据5</td>
+</tr>
+<tr>
+<td rowspan='2'>合并列</td>
+<td>20</td>
+<td>30</td>
+<td>40.4</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>数据2</td>
+<td>数据3</td>
+<td>数据4</td>
+<td>数据5</td>
+</tr>
+</table>
+<button id="exportBtn">导出XLSX</button>
+<script type="text/javascript">
+$("#exportBtn").click(function(){
+var tb = $("#tabledata").tableExport({
+    exportButtons:false,
+    formats: ["xlsx"],
+    filename: "导出的数据",
+    bootstrap: false,
+    trimWhitespace: true,
+    sheetname: "导出数据"
+    });
+var tdata = tb.getExportData()['tabledata']["xlsx"];
+
+tb.export2file(tdata.data,tdata.mimeType,tdata.filename,tdata.fileExtension,tdata.merges,tdata.RTL,tdata.sheetname);
+
+});
+</script>
+</body>
+</html>
